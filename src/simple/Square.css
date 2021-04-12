@@ -1,0 +1,27 @@
+.grid__square {
+    min-height: 65px;
+    min-width: 65px;
+    max-height: 65px;
+    max-width: 65px;
+    margin: 0px;
+    background-color: chartreuse;
+    border: black 1px solid;
+    display: block;
+    float: left;
+}
+
+.grid__square--selected {
+    border: white 1px solid;
+}
+
+.grid__square--hovered {
+    border: blue 1px solid;
+}
+
+.grid__square--targeted {
+    border: red 1px solid;
+}
+
+.grid__square--in-movement-range {
+    border: purple 1px solid;
+}

@@ -1,0 +1,4 @@
+type colour = 
+    | Red
+    | Blue
+
