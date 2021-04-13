@@ -17,5 +17,6 @@
     "module": "commonjs",
     "in-source": true
   },
-  "suffix": ".bs.js"
+  "suffix": ".bs.js",
+ "warnings": {"number": "-48"}
 }

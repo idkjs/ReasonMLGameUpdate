@@ -6,7 +6,7 @@ let createList = (y, create) => range(y) |> List.map(create);
 
 let updateList = (condition: ('a) => bool, updateItem: ('a) => 'a) => List.map(item => condition(item) ? updateItem(item) : item);
 
-let createReasonReactArray = (y, create) => createList(y, create) |> Array.of_list |> ReasonReact.array;
+let createReasonReactArray = (y, create) => createList(y, create) |> Array.of_list |> React.array;
 
 let createGrid = (x, y, create, squares: list(Square.square)) =>
   createReasonReactArray(x, i =>

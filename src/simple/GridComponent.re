@@ -53,7 +53,7 @@ let make = (~gamestate: Gamestate.gamestate) => {
       (Utils.createGrid(10, 10, Utils.createSquare(dispatch, state.gameState), state.gameState.grid.squares))
       <div>(React.string(Option.optionIntToString(state.gameState.selectedUnitId)))</div>
       <div>{React.string("Turnorder?")}</div>
-      <div>(List.map((unit: Unit.unit) => React.string(string_of_int(unit.id)), Unit.determineTurnOrder(state.gameState.units)) |> Array.of_list |> ReasonReact.array)</div>
+      <div>(List.map((unit: Unit.unit) => React.string(string_of_int(unit.id)), Unit.determineTurnOrder(state.gameState.units)) |> Array.of_list |> React.array)</div>
       <div>(Option.map(InterActionModeHandlers.findUnitInUnitList(state.gameState.units), state.gameState.selectedUnitId)
       |> Option.map((unit: Unit.unit) => unit.hp) |> Option.optionIntToString |> React.string)</div>
       (state.gameState.interactionMode == HeroSelected && Option.contains(state.gameState.selectedUnitId, List.hd(Unit.determineTurnOrder(state.gameState.units)).id)
@@ -62,7 +62,7 @@ let make = (~gamestate: Gamestate.gamestate) => {
         <button onClick=(_event => dispatch(AttackClicked)) >{React.string("Attack")}</button>
         <button onClick=(_event => dispatch(ShopClicked)) >{React.string("Open shop")}</button>
         (List.hd(Unit.determineTurnOrder(state.gameState.units)).skills |> List.map(skill =>
-        <button onClick=(_event => dispatch(SelectSkill(skill)))>(React.string(skill.name))</button>) |> Array.of_list |> ReasonReact.array
+        <button onClick=(_event => dispatch(SelectSkill(skill)))>(React.string(skill.name))</button>) |> Array.of_list |> React.array
         )
       </div>
       : <span/>

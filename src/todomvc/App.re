@@ -190,7 +190,7 @@ module Top = {
               checked={activeTodoCount === 0}
             />
             <ul className="todo-list">
-              {ReasonReact.array(List.toArray(todoItems))}
+              {React.array(List.toArray(todoItems))}
             </ul>
           </section>;
     <div>
